@@ -1,0 +1,11 @@
+C:\Users\caljf\Documents\EnumApp\bin\Debug\netcoreapp2.1\EnumApp.deps.json
+C:\Users\caljf\Documents\EnumApp\bin\Debug\netcoreapp2.1\EnumApp.runtimeconfig.json
+C:\Users\caljf\Documents\EnumApp\bin\Debug\netcoreapp2.1\EnumApp.runtimeconfig.dev.json
+C:\Users\caljf\Documents\EnumApp\bin\Debug\netcoreapp2.1\EnumApp.dll
+C:\Users\caljf\Documents\EnumApp\bin\Debug\netcoreapp2.1\EnumApp.pdb
+C:\Users\caljf\Documents\EnumApp\obj\Debug\netcoreapp2.1\EnumApp.csprojAssemblyReference.cache
+C:\Users\caljf\Documents\EnumApp\obj\Debug\netcoreapp2.1\EnumApp.csproj.CoreCompileInputs.cache
+C:\Users\caljf\Documents\EnumApp\obj\Debug\netcoreapp2.1\EnumApp.AssemblyInfoInputs.cache
+C:\Users\caljf\Documents\EnumApp\obj\Debug\netcoreapp2.1\EnumApp.AssemblyInfo.cs
+C:\Users\caljf\Documents\EnumApp\obj\Debug\netcoreapp2.1\EnumApp.dll
+C:\Users\caljf\Documents\EnumApp\obj\Debug\netcoreapp2.1\EnumApp.pdb
