@@ -99,7 +99,7 @@ class App
 {
     static void Main()
     {
-        Person[] peopleArray = new Person[9]
+        Person[] peopleArray = new Person[10]
         {
             new Person("Kenny", "Foster"),
             new Person("Glenn", "Dixon"),
@@ -110,6 +110,8 @@ class App
             new Person("Calvin", "Foster"),
             new Person("Antawnn", "Finch"),
             new Person("Terrence", "Joyner"),
+            new Person("Jurnell", "Cochren"),
+
         };
 
         People peopleList = new People(peopleArray);
