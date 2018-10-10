@@ -2,23 +2,118 @@
 
 namespace EnumApp
 {
-   public class EnumTest
-{
-    enum Day { Sun, Mon, Tue, Wed, Thu, Fri, Sat };
+  using System;
+using System.Collections;
 
+// Simple business object.
+public class Person
+{
+    public Person(string fName, string lName)
+    {
+        this.firstName = fName;
+        this.lastName = lName;
+    }
+
+    public string firstName;
+    public string lastName;
+}
+
+// Collection of Person objects. This class
+// implements IEnumerable so that it can be used
+// with ForEach syntax.
+public class People : IEnumerable
+{
+    private Person[] _people;
+    public People(Person[] pArray)
+    {
+        _people = new Person[pArray.Length];
+
+        for (int i = 0; i < pArray.Length; i++)
+        {
+            _people[i] = pArray[i];
+        }
+    }
+
+// Implementation for the GetEnumerator method.
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+       return (IEnumerator) GetEnumerator();
+    }
+
+    public PeopleEnum GetEnumerator()
+    {
+        return new PeopleEnum(_people);
+    }
+}
+
+// When you implement IEnumerable, you must also implement IEnumerator.
+public class PeopleEnum : IEnumerator
+{
+    public Person[] _people;
+
+    // Enumerators are positioned before the first element
+    // until the first MoveNext() call.
+    int position = -1;
+
+    public PeopleEnum(Person[] list)
+    {
+        _people = list;
+    }
+
+    public bool MoveNext()
+    {
+        position++;
+        return (position < _people.Length);
+    }
+
+    public void Reset()
+    {
+        position = -1;
+    }
+
+    object IEnumerator.Current
+    {
+        get
+        {
+            return Current;
+        }
+    }
+
+    public Person Current
+    {
+        get
+        {
+            try
+            {
+                return _people[position];
+            }
+            catch (IndexOutOfRangeException)
+            {
+                throw new InvalidOperationException();
+            }
+        }
+    }
+}
+
+class App
+{
     static void Main()
     {
-        Console.Write("Hello World!");
-        Console.ReadLine();
+        Person[] peopleArray = new Person[7]
+        {
+            new Person("Kenny", "Foster"),
+            new Person("Glenn", "Dixon"),
+            new Person("Tobias", "Blair"),
+            new Person("Nicole", "Ahima"),
+            new Person("Ericka", "Foster"),
+            new Person("Trevor", "Guinn"),
+            new Person("Calvin", "Foster"),
+        };
 
-        int x = (int)Day.Sun;
-        int y = (int)Day.Fri;
-        int a = (int)Day.Tue;
-        int b = (int)Day.Wed;
-        Console.WriteLine("Sun = {0}", x);
-        Console.WriteLine("Fri = {0}", y);
-        Console.WriteLine("Tue = {0}", a);
-        Console.WriteLine("Wed = {0}", b);
+        People peopleList = new People(peopleArray);
+        foreach (Person p in peopleList)
+            Console.WriteLine(p.firstName + " " + p.lastName);
+
     }
 }
 }
